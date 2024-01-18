@@ -30,4 +30,8 @@
         <!-- Customize your theme here. -->
         <item name="android:statusBarColor">@color/md_theme_dark_background</item>
     </style>
+
+    <style name="Theme.Horarios.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Horarios.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 </resources>

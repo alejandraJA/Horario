@@ -38,7 +38,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Horarios.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Horarios.AppBarOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="Theme.Horarios.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
