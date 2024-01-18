@@ -11,12 +11,22 @@
         android:layout_height="wrap_content"
         android:theme="@style/Theme.Horarios.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.Horarios.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            app:title="un titulo"
+            app:popupTheme="@style/Theme.Horarios.PopupOverlay"
+            app:navigationIcon="@drawable/round_close_24" />
+
+<!--            app:menu="@menu/top_app_bar"-->
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:background="?attr/colorPrimary"-->
+<!--            app:popupTheme="@style/Theme.Horarios.PopupOverlay" />-->
 
     </com.google.android.material.appbar.AppBarLayout>
 
