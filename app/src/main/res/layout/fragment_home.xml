@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="l" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="m" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mi" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="j" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_monday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recycler_tuesday"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_horario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_week" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_tuesday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recycler_wednesday"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_horario"
+        app:layout_constraintStart_toEndOf="@+id/recycler_monday"
+        app:layout_constraintTop_toBottomOf="@+id/tab_week" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_wednesday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recycler_thursday"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_horario"
+        app:layout_constraintStart_toEndOf="@+id/recycler_tuesday"
+        app:layout_constraintTop_toBottomOf="@+id/tab_week" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_thursday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/recycler_friday"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_horario"
+        app:layout_constraintStart_toEndOf="@+id/recycler_wednesday"
+        app:layout_constraintTop_toBottomOf="@+id/tab_week" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_friday"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_horario"
+        app:layout_constraintStart_toEndOf="@+id/recycler_thursday"
+        app:layout_constraintTop_toBottomOf="@+id/tab_week" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
