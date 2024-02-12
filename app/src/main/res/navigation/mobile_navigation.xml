@@ -22,4 +22,9 @@
         android:name="com.ale.horarios.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/horarioFragment"
+        android:name="com.ale.horarios.ui.horario.HorarioFragment"
+        android:label="fragment_horario"
+        tools:layout="@layout/fragment_horario" />
 </navigation>
