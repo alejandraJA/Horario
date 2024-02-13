@@ -4,19 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.ale.horarios.databinding.FragmentHomeBinding
+import com.ale.horarios.ui.theme.AppTheme
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-
     // This property is only valid between onCreateView and
     // onDestroyView.
+    private var _binding: FragmentHomeBinding? = null
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -24,15 +26,27 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val homeViewModel =
             ViewModelProvider(this)[HomeViewModel::class.java]
-
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-
-        return root
+        binding.composeView.apply {
+            setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+            setContent {
+                AppTheme(useDarkTheme = isSystemInDarkTheme()) {
+                    SetWeekDays()
+                    Button(onClick = { /*TODO*/ }) {
+                        Text(text = "Button")
+                    }
+                }
+            }
+        }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
